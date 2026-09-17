@@ -1,0 +1,491 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #397eb2, #10847e);
+}
+
+.login-card {
+    width: 420px;
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.login-logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #397eb2, #10847e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.login-card h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 26px;
+    color: #1f2937;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin: 8px 0 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #397eb2;
+    box-shadow: 0 0 0 3px rgba(57, 126, 178, 0.12);
+}
+
+.login-button {
+    width: 100%;
+    height: 46px;
+    border: none;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #397eb2, #10847e);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    opacity: 0.9;
+}
+
+.error {
+    color: #dc2626;
+    font-size: 14px;
+}
+
+.success {
+    color: #16a34a;
+    font-size: 14px;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    min-height: 100vh;
+    padding: 35px 50px;
+    background: #f4f7fb;
+}
+
+/* Header */
+
+.header {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: white;
+    padding: 22px 28px;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #1f2937;
+}
+
+.header p {
+    margin: 6px 0 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.header button {
+    background: #ef4444;
+}
+
+/* Cards */
+
+.card {
+    max-width: 1200px;
+    margin: 0 auto 25px;
+
+    background: white;
+    padding: 28px;
+
+    border-radius: 14px;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+    margin: 0 0 22px;
+    font-size: 20px;
+    color: #1f2937;
+}
+
+/* Form */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card .form-group {
+    margin-bottom: 0;
+}
+
+.card input,
+.card select,
+.card textarea {
+    width: 100%;
+    padding: 11px 13px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font-size: 14px;
+    outline: none;
+    background: white;
+}
+
+.card textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.card input:focus,
+.card select:focus,
+.card textarea:focus {
+    border-color: #397eb2;
+    box-shadow: 0 0 0 3px rgba(57, 126, 178, 0.1);
+}
+
+/* Buttons */
+
+.card button,
+.header button {
+    border: none;
+    padding: 10px 17px;
+    border-radius: 7px;
+
+    background: #397eb2;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.card button:hover,
+.header button:hover {
+    opacity: 0.9;
+}
+
+/* Table */
+
+.card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.card th {
+    padding: 14px;
+    text-align: left;
+
+    background: #f8fafc;
+    color: #475569;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.card td {
+    padding: 14px;
+
+    border-bottom: 1px solid #eef2f7;
+
+    font-size: 14px;
+}
+
+.card tbody tr:hover {
+    background: #f8fafc;
+}
+
+.card table select {
+    width: 140px;
+    padding: 7px 9px;
+}
+
+/* Delete button */
+
+.card table button {
+    padding: 7px 12px;
+}
+
+.card table button[style*="dc2626"] {
+    background: #ef4444 !important;
+}
+
+.card textarea {
+    min-height: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card td:nth-child(4) {
+    font-weight: 600;
+}
+
+/* =========================
+   USER DASHBOARD
+========================= */
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.profile-item {
+    padding: 18px;
+    background: #f8fafc;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.profile-item span {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.profile-item strong {
+    font-size: 15px;
+    color: #1f2937;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    margin-bottom: 5px;
+}
+
+.section-title p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.task-count {
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #e6f4f1;
+    color: #10847e;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.task-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.task-card {
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fafafa;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.task-header h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+.task-card p {
+    color: #64748b;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.task-card small {
+    color: #94a3b8;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    background: #e2e8f0;
+}
+
+.status.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status.in-progress {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.status.completed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 45px 20px;
+    background: #f8fafc;
+    border-radius: 10px;
+}
+
+.empty-state h3 {
+    margin: 0 0 8px;
+}
+
+.empty-state p {
+    margin: 0;
+    color: #64748b;
+}
+
+.completed-count {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.completed-task {
+    background: #f8fafc;
+}
+
+@media (max-width: 700px) {
+
+    .profile-grid,
+    .task-list {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+    .dashboard {
+        padding: 20px;
+    }
+
+    .header {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 20px;
+        overflow-x: auto;
+    }
+
+    .card table {
+        min-width: 700px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .dashboard {
+        padding: 12px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .login-card {
+        width: calc(100% - 30px);
+        padding: 30px 25px;
+    }
+}

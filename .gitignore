@@ -1,22 +1,22 @@
-# Java / Spring Boot
+# Java
 target/
 *.class
 
-# Environment files
-.env
-.env.*
-
-# IDE
-.idea/
-.vscode/
-*.iml
-
-# Logs
-*.log
+# Eclipse
+.classpath
+.project
+.settings/
 
 # Node
 node_modules/
 dist/
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
 
 # OS
 .DS_Store

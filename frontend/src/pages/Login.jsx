@@ -15,7 +15,7 @@ function Login() {
         try {
 
             const loginResponse = await axios.post(
-                "http://localhost:8080/api/auth/login",
+                "https://user-management-system-uh3s.onrender.com/api/auth/login",
                 {
                     email: email,
                     password: password
@@ -27,7 +27,7 @@ function Login() {
             localStorage.setItem("token", token);
 
             const profileResponse = await axios.get(
-                "http://localhost:8080/api/user/profile",
+                "https://user-management-system-uh3s.onrender.com/api/user/profile",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`

@@ -26,7 +26,7 @@ function AdminDashboard() {
         try {
 
             const response = await axios.get(
-                "http://localhost:8080/api/admin/users",
+                "https://user-management-system-uh3s.onrender.com/api/admin/users",
                 { headers }
             );
 
@@ -53,7 +53,7 @@ function AdminDashboard() {
         try {
 
             await axios.post(
-                "http://localhost:8080/api/admin/users",
+                "https://user-management-system-uh3s.onrender.com/api/admin/users",
                 {
                     name,
                     email,
@@ -100,7 +100,7 @@ function AdminDashboard() {
         try {
 
             await axios.put(
-                `http://localhost:8080/api/admin/users/${editId}`,
+                `https://user-management-system-uh3s.onrender.com/api/admin/users/${editId}`,
                 {
                     name,
                     email,
@@ -130,7 +130,7 @@ function AdminDashboard() {
         try {
 
             await axios.put(
-                `http://localhost:8080/api/admin/users/${id}/role?role=${newRole}`,
+                `https://user-management-system-uh3s.onrender.com/api/admin/users/${id}/role?role=${newRole}`,
                 {},
                 { headers }
             );
@@ -154,7 +154,7 @@ function AdminDashboard() {
         try {
 
             await axios.delete(
-                `http://localhost:8080/api/admin/users/${id}`,
+                `https://user-management-system-uh3s.onrender.com/api/admin/users/${id}`,
                 { headers }
             );
 

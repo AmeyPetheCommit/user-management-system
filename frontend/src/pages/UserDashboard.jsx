@@ -16,7 +16,7 @@ function UserDashboard() {
     const getProfile = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:8080/api/user/profile",
+                "https://user-management-system-uh3s.onrender.com/api/user/profile",
                 { headers }
             );
 
@@ -30,7 +30,7 @@ function UserDashboard() {
     const getTasks = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:8080/api/user/tasks",
+                "https://user-management-system-uh3s.onrender.com/api/user/tasks",
                 { headers }
             );
 

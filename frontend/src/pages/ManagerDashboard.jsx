@@ -23,7 +23,7 @@ function ManagerDashboard() {
     const getUsers = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:8080/api/manager/users",
+                "https://user-management-system-uh3s.onrender.com/api/manager/users",
                 { headers }
             );
 
@@ -37,7 +37,7 @@ function ManagerDashboard() {
     const getTasks = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:8080/api/manager/tasks",
+                "https://user-management-system-uh3s.onrender.com/api/manager/tasks",
                 { headers }
             );
 
@@ -63,7 +63,7 @@ function ManagerDashboard() {
         try {
 
             await axios.post(
-                `http://localhost:8080/api/manager/tasks?userId=${userId}`,
+                `https://user-management-system-uh3s.onrender.com/api/manager/tasks?userId=${userId}`,
                 {
                     title,
                     description,
@@ -98,7 +98,7 @@ function ManagerDashboard() {
     try {
 
         await axios.put(
-            `http://localhost:8080/api/manager/tasks/${taskId}/status?status=${newStatus}`,
+            `https://user-management-system-uh3s.onrender.com/api/manager/tasks/${taskId}/status?status=${newStatus}`,
             {},
             { headers }
         );

@@ -7,7 +7,7 @@ import com.example.demo.entity.User;
 import com.example.demo.exception.UserNotFoundException;
 import com.example.demo.repository.roleRepository;
 import com.example.demo.repository.userRepository;
-import com.example.demo.repository.TaskRepository;
+import com.example.demo.repository.taskRespository;
 import jakarta.validation.Valid;
 
 import java.util.List;
@@ -22,16 +22,16 @@ public class AdminController {
     private final userRepository userRepository;
     private final roleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
-    private final TaskRepository taskRepository;
+    private final taskRespository taskRespository;
 
 	    public AdminController(UserRepository userRepository,
 	            RoleRepository roleRepository,
 	            PasswordEncoder passwordEncoder,
-	            TaskRepository taskRepository) {
+	            taskRespository taskRespository) {
 					this.userRepository = userRepository;
 					this.roleRepository = roleRepository;
 					this.passwordEncoder = passwordEncoder;
-					this.taskRepository = taskRepository;
+					this.taskRespository = taskRespository;
 				}
 
     @PostMapping("/users")
@@ -91,7 +91,7 @@ public class AdminController {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException("User not found"));
 
-        taskRepository.deleteAll(taskRepository.findByAssignedTo(user));
+        taskRepository.deleteAll(taskRespository.findByAssignedTo(user));
 
         userRepository.delete(user);
 

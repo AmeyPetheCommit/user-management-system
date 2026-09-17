@@ -7,7 +7,7 @@ import com.example.demo.entity.User;
 import com.example.demo.exception.UserNotFoundException;
 import com.example.demo.repository.roleRepository;
 import com.example.demo.repository.userRepository;
-
+import com.example.demo.repository.TaskRepository;
 import jakarta.validation.Valid;
 
 import java.util.List;
@@ -22,14 +22,17 @@ public class AdminController {
     private final userRepository userRepository;
     private final roleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
+    private final TaskRepository taskRepository;
 
-    public AdminController(userRepository userRepository,
-                           roleRepository roleRepository,
-                           PasswordEncoder passwordEncoder) {
-        this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
-        this.passwordEncoder = passwordEncoder;
-    }
+	    public AdminController(UserRepository userRepository,
+	            RoleRepository roleRepository,
+	            PasswordEncoder passwordEncoder,
+	            TaskRepository taskRepository) {
+					this.userRepository = userRepository;
+					this.roleRepository = roleRepository;
+					this.passwordEncoder = passwordEncoder;
+					this.taskRepository = taskRepository;
+				}
 
     @PostMapping("/users")
     public User createUser(@Valid @RequestBody UserRequest request) {
@@ -85,11 +88,12 @@ public class AdminController {
     @DeleteMapping("/users/{id}")
     public String deleteUser(@PathVariable Long id) {
 
-        if (!userRepository.existsById(id)) {
-            throw new UserNotFoundException("User not found");
-        }
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
 
-        userRepository.deleteById(id);
+        taskRepository.deleteAll(taskRepository.findByAssignedTo(user));
+
+        userRepository.delete(user);
 
         return "User deleted successfully";
     }
